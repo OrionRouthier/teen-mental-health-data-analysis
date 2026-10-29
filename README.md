@@ -47,7 +47,7 @@ L'analyse de corrélation démontre que les variables créées (*Handcrafted Fea
 ### 2. Séparabilité Géométrique en 3D
 La projection des individus dans l'espace tridimensionnel formé par nos trois variables créées met en évidence une **séparabilité quasi-parfaite** des profils dépressifs (points rouges) par rapport aux profils sains (points verts).
 
-![Séparabilité 3D](séparabilité3features.jpg)
+![Séparabilité 3D](séparabilité3features.png)
 
 ### 3. Performance du Modèle Prédictif
 Entraîné sur la zone de danger avec une validation croisée et une pondération adaptée aux classes déséquilibrées (`class_weight='balanced'`), le modèle linéaire s'appuyant sur ces trois seules variables atteint d'excellentes performances de dépistage, garantissant un rappel maximal sur les cas à risque.
