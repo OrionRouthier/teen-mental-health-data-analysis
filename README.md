@@ -21,19 +21,21 @@ Ce projet s'attache à mettre en lumière les corrélations cachées entre les h
 L'analyse exploratoire a permis d'isoler une sous-population critique dite « zone de danger » caractérisée par un **sommeil inférieur à 6 heures par nuit** et un **temps d'écran supérieur à 5 heures par jour**. 
 * Sur les 1200 individus initiaux, ce filtre permet de concentrer l'analyse sur 198 adolescents où la prévalence de la dépression passe de **2,6 % à 15,7 %** (soit un facteur multiplicatif de x6).
 
-### 2. Conception des Features Artisanales (*Handcrafted Features*)
+### 2. Conception des Features Artisanales (Handcrafted Features)
+
 Plutôt que d'exploiter les variables de manière isolée, trois indicateurs composites ont été développés pour capturer la non-linéarité des troubles psychologiques :
 
 * **Ratio Écran / Sommeil** : 
-  $$\text{ratio\_ecran\_sommeil} = \frac{\text{daily\_social\_media\_hours}}{\text{sleep\_hours}}$$
-  * *Justification* : Capture le déséquilibre structurel entre le temps d'exposition numérique et le temps de récupération physiologique[cite: 36].
-* **Indice de Charge Mentale** : 
-  $$\text{charge\_mentale\_index} = \text{stress\_level} + \text{anxiety\_level} + \text{addiction\_level}$$
-  * *Justification* : Fournit un score de fardeau cumulé sur une échelle globale.
-* **Seuil de Synergie Critique** : 
-  $$\text{seuil\_synergie\_critique} = \begin{cases} \text{stress\_level} \times \text{anxiety\_level} & \text{si } \text{stress} > 6 \text{ et } \text{anxiété} > 6 \\ 0 & \text{sinon} \end{cases}$$
-  * *Justification* : Modélise l'effet multiplicatif (et non purement additif) lorsque la détresse psychologique franchit un seuil de rupture clinique.
+  `ratio_ecran_sommeil = daily_social_media_hours / sleep_hours`
+  * *Justification* : Capture le déséquilibre structurel entre le temps d'exposition numérique et le temps de récupération physiologique.
 
+* **Indice de Charge Mentale** : 
+  `charge_mentale_index = stress_level + anxiety_level + addiction_level`
+  * *Justification* : Fournit un score de fardeau cumulé sur une échelle globale.
+
+* **Seuil de Synergie Critique** : 
+  `seuil_synergie_critique = stress_level * anxiety_level` (si stress > 6 et anxiété > 6, sinon 0)
+  * *Justification* : Modélise l'effet multiplicatif lorsque la détresse psychologique franchit un seuil de rupture clinique.
 ---
 
 ## 📈 Résultats et Visualisations Clés
